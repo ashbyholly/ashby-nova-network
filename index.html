@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashby Nova Network</title>
+  <meta name="description" content="Ashby Nova Network is a feminine luxury creator network for Holly Ashby with platform launch access, editorial branding, and future-ready AI expansion.">
+  <meta name="theme-color" content="#8e4b68">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ashby Nova">
+  <meta property="og:title" content="Ashby Nova Network">
+  <meta property="og:description" content="A female-luxury creator platform with Shopify, Depop, Instagram, and Pinterest launch layers.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/ha-luxury-logo.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2.35rem, 1.35rem + 3vw, 4.8rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1.1rem; --radius-xl: 1.5rem; --radius-full: 999px;
+      --color-bg: #fbf6f8; --color-surface: #fffafc; --color-surface-2: #f8eef2; --color-surface-offset: #f1e3e9; --color-divider: rgba(67, 34, 47, 0.08); --color-border: rgba(67, 34, 47, 0.12); --color-text: #24171f; --color-text-muted: #715767; --color-text-faint: #a78e9c; --color-primary: #8e4b68; --color-primary-hover: #733b54; --color-primary-highlight: #ead7df; --color-gold: #ba9163;
+      --shadow-sm: 0 1px 3px rgba(35, 18, 27, 0.08); --shadow-md: 0 12px 32px rgba(35, 18, 27, 0.10); --shadow-lg: 0 24px 60px rgba(35, 18, 27, 0.14);
+      --font-display: 'Cormorant Garamond', Georgia, serif; --font-body: 'Inter', Arial, sans-serif; --content: 1180px; --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-theme="dark"] {
+      --color-bg: #161114; --color-surface: #1e171b; --color-surface-2: #261d22; --color-surface-offset: #31262c; --color-divider: rgba(255,255,255,0.08); --color-border: rgba(255,255,255,0.12); --color-text: #f1e8ec; --color-text-muted: #c4afb9; --color-text-faint: #907a85; --color-primary: #dc9db9; --color-primary-hover: #eab2ca; --color-primary-highlight: #3b2a32; --color-gold: #d8b184; --shadow-sm: 0 1px 3px rgba(0,0,0,0.22); --shadow-md: 0 12px 32px rgba(0,0,0,0.32); --shadow-lg: 0 24px 60px rgba(0,0,0,0.42);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-height: 100vh; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: radial-gradient(circle at top left, rgba(186,145,99,0.12), transparent 28%), radial-gradient(circle at top right, rgba(142,75,104,0.10), transparent 26%), var(--color-bg); line-height: 1.6; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .skip-link { position: absolute; left: -999px; top: 0; background: var(--color-text); color: var(--color-bg); padding: var(--space-3) var(--space-4); z-index: 99; }
+    .skip-link:focus { left: var(--space-4); top: var(--space-4); }
+    .shell { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(16px); background: color-mix(in srgb, var(--color-bg) 82%, transparent); border-bottom: 1px solid var(--color-divider); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) 0; }
+    .brand { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+    .brand-mark { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary-highlight), rgba(186,145,99,0.18)); border: 1px solid var(--color-border); display: grid; place-items: center; overflow: hidden; box-shadow: var(--shadow-sm); }
+    .brand-copy strong, h1, h2, h3 { font-family: var(--font-display); }
+    .brand-copy strong { display: block; font-size: var(--text-lg); line-height: 1; font-weight: 700; }
+    .brand-copy span { display: block; color: var(--color-text-muted); font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; }
+    .header-actions { display: flex; align-items: center; gap: var(--space-2); }
+    .theme-toggle, .nav-link, .cta, .ghost { border-radius: var(--radius-full); transition: all var(--transition); border: 1px solid var(--color-border); }
+    .theme-toggle, .nav-link { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 0 var(--space-4); }
+    .nav-desktop { display: none; gap: var(--space-2); }
+    .nav-link:hover, .theme-toggle:hover, .ghost:hover { background: var(--color-surface-2); }
+    .cta, .ghost { min-height: 48px; padding: 0 var(--space-5); display: inline-flex; align-items: center; justify-content: center; font-weight: 600; }
+    .cta { background: var(--color-primary); color: #fff; border-color: transparent; box-shadow: var(--shadow-sm); }
+    .cta:hover { background: var(--color-primary-hover); }
+    .hero { padding: clamp(4rem, 8vw, 7rem) 0 var(--space-16); }
+    .hero-grid { display: grid; gap: var(--space-8); align-items: start; }
+    .eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.18em; color: var(--color-text-muted); margin-bottom: var(--space-4); }
+    .hero h1 { font-size: var(--text-2xl); line-height: 0.95; margin: 0 0 var(--space-4); max-width: 11ch; font-weight: 600; }
+    .lede { color: var(--color-text-muted); max-width: 58ch; margin-bottom: var(--space-6); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-8); }
+    .hero-note { display: grid; gap: var(--space-3); padding: var(--space-6); border-radius: var(--radius-xl); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+    .stat { padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-surface-2); border: 1px solid var(--color-border); }
+    .stat strong { display: block; font-size: var(--text-lg); font-family: var(--font-display); }
+    .visual-panel { position: relative; border-radius: 2rem; overflow: hidden; background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.22)); border: 1px solid var(--color-border); box-shadow: var(--shadow-lg); min-height: 560px; }
+    [data-theme="dark"] .visual-panel { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); }
+    .visual-top { padding: var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); border-bottom: 1px solid var(--color-divider); }
+    .pill { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.5rem 0.85rem; border-radius: var(--radius-full); background: var(--color-primary-highlight); color: var(--color-primary); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .mockup-grid, .editorial-grid, .feature-grid, .tiers, .steps { display: grid; gap: var(--space-4); }
+    .mockup-grid { padding: var(--space-5); }
+    .dashboard-card, .panel { background: color-mix(in srgb, var(--color-surface) 86%, transparent); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-5); box-shadow: var(--shadow-sm); }
+    .dashboard-card h3, .panel h3 { margin: 0 0 var(--space-2); font-size: var(--text-lg); }
+    .dashboard-card p, .panel p { margin: 0; color: var(--color-text-muted); }
+    .chip-row, .member-row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .chip { padding: 0.45rem 0.8rem; border-radius: var(--radius-full); background: var(--color-surface-2); border: 1px solid var(--color-border); font-size: var(--text-xs); color: var(--color-text-muted); }
+    .member { flex: 1 1 150px; min-width: 0; padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-surface-2); border: 1px solid var(--color-border); }
+    section { padding: var(--space-12) 0; }
+    .section-head { display: grid; gap: var(--space-3); margin-bottom: var(--space-8); }
+    .section-head h2 { font-size: var(--text-xl); margin: 0; }
+    .section-head p { color: var(--color-text-muted); max-width: 60ch; margin: 0; }
+    .quote { display: grid; align-content: end; min-height: 100%; background: linear-gradient(135deg, var(--color-primary-highlight), transparent), var(--color-surface); }
+    .quote blockquote { margin: 0; font-family: var(--font-display); font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4rem); line-height: 1.08; }
+    .quote cite { margin-top: var(--space-4); font-style: normal; color: var(--color-text-muted); }
+    .tier-price { font-size: var(--text-xl); font-family: var(--font-display); margin: var(--space-2) 0 var(--space-4); }
+    .list { padding-left: 1.1rem; color: var(--color-text-muted); margin: 0; }
+    .list li + li { margin-top: var(--space-2); }
+    .founder { display: grid; gap: var(--space-6); align-items: center; padding: var(--space-8); border-radius: calc(var(--radius-xl) + 0.4rem); background: var(--color-surface); border: 1px solid var(--color-border); box-shadow: var(--shadow-md); }
+    .founder-badge { color: var(--color-gold); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.18em; }
+    .footer { padding: var(--space-10) 0 var(--space-16); color: var(--color-text-muted); }
+    .footer-box { display: flex; flex-direction: column; gap: var(--space-3); padding-top: var(--space-6); border-top: 1px solid var(--color-divider); }
+    @media (min-width: 860px) { .nav-desktop { display: flex; } .hero-grid { grid-template-columns: 1.1fr 0.9fr; } .editorial-grid { grid-template-columns: 1.15fr 0.85fr; } .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .tiers { grid-template-columns: repeat(3, minmax(0, 1fr)); } .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); } .founder { grid-template-columns: 0.95fr 1.05fr; } .mockup-grid { grid-template-columns: 1.1fr 0.9fr; } }
+    @media (max-width: 859px) { .header-actions .ghost { display: none; } .stats { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="shell header-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="assets/ashby-nova-ha-bag-logo.svg" alt="Ashby Nova Network monogram logo" width="48" height="48">
+        </div>
+        <div class="brand-copy">
+          <strong>Ashby Nova Network</strong>
+          <span>Luxury creator house</span>
+        </div>
+      </div>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a class="nav-link" href="#network">Network</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#platforms">Platforms</a>
+        <a class="nav-link" href="#membership">Membership</a>
+        <a class="nav-link" href="#founder">Founder</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme">◐</button>
+        <a class="ghost" href="#membership">Reserve access</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Editorial luxury • creator intelligence • premium access</div>
+          <h1>Build a digital house around Holly Ashby.</h1>
+          <p class="lede">Ashby Nova Network is designed as a feminine luxury brand world for content, commerce, private audience spaces, and AI-guided creator operations — refined enough for editorial identity, practical enough for daily control.</p>
+          <div class="hero-actions">
+            <a class="cta" href="#platforms">Open the platform suite</a>
+            <a class="ghost" href="#experience">View the system</a>
+          </div>
+          <div class="hero-note">
+            <div class="stats">
+              <div class="stat"><strong>01</strong><span>Luxury-first visual identity with app-ready structure.</span></div>
+              <div class="stat"><strong>02</strong><span>AI concierge area prepared for creator workflows and future integrations.</span></div>
+              <div class="stat"><strong>03</strong><span>Platform hub for Shopify, Depop, Instagram, and Pinterest.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-panel" aria-label="Ashby Nova Network platform preview">
+          <div class="visual-top">
+            <div class="pill">Holly Ashby • founder access</div>
+            <div class="pill">Creator suite</div>
+          </div>
+          <div class="mockup-grid">
+            <article class="dashboard-card">
+              <h3>Concierge intelligence</h3>
+              <p>Your private AI-led layer for sales language, brand tone, offer positioning, and audience guidance.</p>
+              <div class="chip-row" style="margin-top:1rem;">
+                <span class="chip">Pricing advice</span>
+                <span class="chip">Luxury copy</span>
+                <span class="chip">Drop planning</span>
+                <span class="chip">Private replies</span>
+              </div>
+            </article>
+            <article class="dashboard-card">
+              <h3>Network rooms</h3>
+              <p>Member circles for followers, buyers, premium supporters, and collaboration touchpoints.</p>
+              <div class="member-row" style="margin-top:1rem;">
+                <div class="member"><strong>Salon</strong><br><span>brand notes</span></div>
+                <div class="member"><strong>Private</strong><br><span>client access</span></div>
+              </div>
+            </article>
+            <article class="dashboard-card">
+              <h3>Commerce spine</h3>
+              <p>A central luxury shell for linking store, resale, creator tools, and future verified services under one brand.</p>
+            </article>
+            <article class="dashboard-card">
+              <h3>Editorial presence</h3>
+              <p>Visual storytelling, founder positioning, launch moments, and premium identity without the generic AI-template look.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="network">
+      <div class="shell">
+        <div class="section-head">
+          <h2>The network architecture</h2>
+          <p>This version is built as a clean GitHub Pages front end for a luxury creator platform, giving you a strong public-facing layer now and room to connect deeper AI, login, and paid service systems later.</p>
+        </div>
+        <div class="editorial-grid">
+          <article class="panel">
+            <h3>Brand world</h3>
+            <p>A calm feminine palette, editorial serif voice, elegant spacing, and a premium founder-led story create a stronger identity than a standard marketplace profile or generic creator landing page.</p>
+          </article>
+          <article class="panel quote">
+            <blockquote>Luxury online should feel private, directional, and unmistakably owned.</blockquote>
+            <cite>Designed for Holly Ashby</cite>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Experience layers</h2>
+          <p>The site is structured to feel like a digital members house: discovery on the outside, controlled premium spaces on the inside, and a future-ready AI layer at the center.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="panel">
+            <h3>AI concierge</h3>
+            <p>Prepared for Perplexity-powered assistance through API-based integration rather than a simple external link, so the experience can eventually sit under your own controlled product flow.</p>
+          </article>
+          <article class="panel">
+            <h3>Commerce control</h3>
+            <p>Position the brand to direct traffic toward product drops, reseller platforms, bookings, waitlists, or premium member offers from one refined destination.</p>
+          </article>
+          <article class="panel">
+            <h3>Private access</h3>
+            <p>Ready in concept for gated experiences, founder-only updates, inner-circle content, and invitation-based premium rooms once a backend is added.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Platform suite</h2>
+          <p>The network now includes a dedicated luxury launch layer for Shopify, Depop, Instagram, and Pinterest so Ashby Nova Network works as a polished central control point instead of only a brand landing page.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="panel">
+            <h3>Shopify</h3>
+            <p>Use Shopify as the main commerce engine for storefront setup, products, and payments while keeping Ashby Nova Network as the premium front-door brand layer.</p>
+            <p style="margin-top:1rem;"><a class="cta" href="https://www.shopify.com/start" target="_blank" rel="noopener noreferrer">Open Shopify</a></p>
+          </article>
+          <article class="panel">
+            <h3>Depop</h3>
+            <p>Add Depop as the resale and audience-growth touchpoint inside the same luxury system, ideal for curated fashion drops and community-led discovery.</p>
+            <p style="margin-top:1rem;"><a class="cta" href="https://www.depop.com/" target="_blank" rel="noopener noreferrer">Open Depop</a></p>
+          </article>
+          <article class="panel">
+            <h3>Instagram</h3>
+            <p>Position Instagram as the visual signal layer for attention, reach, and founder presence, with Ashby Nova Network serving as the destination beyond the feed.</p>
+            <p style="margin-top:1rem;"><a class="cta" href="https://www.instagram.com/?hl=en" target="_blank" rel="noopener noreferrer">Open Instagram</a></p>
+          </article>
+        </div>
+        <div class="editorial-grid" style="margin-top:1rem;">
+          <article class="panel">
+            <h3>Pinterest</h3>
+            <p>Use Pinterest as the long-tail discovery engine for style references, product moodboards, and evergreen feminine-luxury traffic into the brand world.</p>
+            <p style="margin-top:1rem;"><a class="cta" href="https://business.pinterest.com/" target="_blank" rel="noopener noreferrer">Open Pinterest Business</a></p>
+          </article>
+          <article class="panel">
+            <h3>Connected flow</h3>
+            <p>Ashby Nova Network now acts as the polished mother-brand shell: Shopify handles store operations, Depop supports resale culture, Instagram drives attention, and Pinterest feeds aspiration and discovery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="membership">
+      <div class="shell">
+        <div class="section-head">
+          <h2>Membership model</h2>
+          <p>Even as a static launch build, the site can present a clear premium ladder so the brand feels commercially serious from the first publish.</p>
+        </div>
+        <div class="tiers">
+          <article class="panel">
+            <h3>Public</h3>
+            <div class="tier-price">Open</div>
+            <ul class="list">
+              <li>Brand story and founder introduction.</li>
+              <li>Luxury visual identity and call-to-action entry points.</li>
+              <li>Discovery layer for audience growth.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Inner Circle</h3>
+            <div class="tier-price">Invite</div>
+            <ul class="list">
+              <li>Private rooms and closer follower access.</li>
+              <li>Drop previews, premium notes, and soft launches.</li>
+              <li>Future-ready for paid membership conversion.</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>Creator Control</h3>
+            <div class="tier-price">Founder</div>
+            <ul class="list">
+              <li>AI concierge operations for the creator account.</li>
+              <li>Brand planning, sales guidance, and content support.</li>
+              <li>Prepared for API, billing, and backend expansion.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <h2>Publishing path</h2>
+          <p>Use this build as the polished front layer first, then connect the advanced systems in stages so the brand can go live without waiting for a full custom platform stack.</p>
+        </div>
+        <div class="steps">
+          <article class="panel"><h3>1. Publish</h3><p>Upload `index.html`, `manifest.webmanifest`, and your brand assets to a GitHub Pages repository.</p></article>
+          <article class="panel"><h3>2. Brand</h3><p>Attach a custom domain once you secure the name you want to own.</p></article>
+          <article class="panel"><h3>3. Connect</h3><p>Add AI through Perplexity API and account-managed controls outside the static layer.</p></article>
+          <article class="panel"><h3>4. Expand</h3><p>Move into real auth, gated rooms, payments, and protected creator tools with a backend.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder">
+      <div class="shell founder">
+        <div>
+          <img src="assets/ha-luxury-logo.png" alt="Ashby Nova Network luxury logo for Holly Ashby" width="640" height="640" loading="lazy" style="border-radius:1.5rem; border:1px solid var(--color-border); background:var(--color-surface-2); box-shadow:var(--shadow-sm);">
+        </div>
+        <div>
+          <div class="founder-badge">Founder profile</div>
+          <h2 style="font-family:var(--font-display); font-size:var(--text-xl); margin:0 0 1rem;">Holly Ashby at the center of the brand.</h2>
+          <p style="color:var(--color-text-muted); margin:0 0 1rem;">This build places Holly Ashby as the face of a premium digital network rather than just a seller profile, making the brand feel more like a house, a publication, and a private members space combined.</p>
+          <p style="color:var(--color-text-muted); margin:0 0 1.5rem;">The visual language is designed to stay feminine and luxurious while still leaving room for creator operations, AI assistance, and platform growth.</p>
+          <a class="cta" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Return to top</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-box">
+      <strong style="font-family:var(--font-display); font-size:var(--text-lg); color:var(--color-text);">Ashby Nova Network</strong>
+      <span>Female luxury creator platform concept for Holly Ashby, built for GitHub Pages and structured for future AI and premium-access expansion.</span>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const button = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const render = () => {
+        button.textContent = theme === 'dark' ? '☼' : '◐';
+        button.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      };
+      render();
+      button.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        render();
+      });
+    })();
+  </script>
+</body>
+</html>
